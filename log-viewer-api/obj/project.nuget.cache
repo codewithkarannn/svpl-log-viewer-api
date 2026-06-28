@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zVAZ4TuVg1M=",
+  "success": true,
+  "projectFilePath": "/Users/karanvishwakarma/Code/log-viewer-api/log-viewer-api/log-viewer-api.csproj",
+  "expectedPackageFiles": [
+    "/Users/karanvishwakarma/.nuget/packages/microsoft.aspnetcore.openapi/9.0.10/microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
+    "/Users/karanvishwakarma/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/Users/karanvishwakarma/.nuget/packages/scalar.aspnetcore/2.14.14/scalar.aspnetcore.2.14.14.nupkg.sha512"
+  ],
+  "logs": []
+}
