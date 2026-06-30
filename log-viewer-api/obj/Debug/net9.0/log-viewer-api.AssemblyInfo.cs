@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("log-viewer-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a641ec565ffa03844c35fb0727dee003d51316bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("log-viewer-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("log-viewer-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,3 +31,4 @@
 /Users/karanvishwakarma/Code/log-viewer-api/log-viewer-api/obj/Debug/net9.0/log-viewer-api.genruntimeconfig.cache
 /Users/karanvishwakarma/Code/log-viewer-api/log-viewer-api/obj/Debug/net9.0/ref/log-viewer-api.dll
 /Users/karanvishwakarma/Code/log-viewer-api/log-viewer-api/bin/Debug/net9.0/Scalar.AspNetCore.dll
+/Users/karanvishwakarma/Code/log-viewer-api/log-viewer-api/obj/Debug/net9.0/log-viewer-api.sourcelink.json

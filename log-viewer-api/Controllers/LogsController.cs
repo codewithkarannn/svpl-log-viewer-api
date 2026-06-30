@@ -1,6 +1,7 @@
 using System.Net;
 using log_viewer_api.Interfaces;
 using log_viewer_api.Models;
+using log_viewer_api.Services;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Models;
 
@@ -34,7 +35,8 @@ public class LogsController(ILogFileService logFileService) : ControllerBase
     [HttpGet]
     public async Task< ActionResult<ApiResponse<List<LogEntryDto>>>> ReadFile([FromQuery] string rootDirectory)
     {
-        rootDirectory = WebUtility.UrlDecode(rootDirectory);
+   
+
         var logs = await logFileService.ReadFile(rootDirectory);
         if (logs.Count <= 0)
         {

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using log_viewer_api.Hubs;
 using log_viewer_api.Interfaces;
 using log_viewer_api.Services;
@@ -16,10 +17,23 @@ builder.Services.AddCors( options =>
     });
 });
 
-builder.Services.AddScoped<ILogFileService, LogFileService>();
-builder.Services.AddHostedService<LogWatcherService>();
+builder.Services.AddSignalR(options =>
+    {
+        options.EnableDetailedErrors = builder.Environment.IsDevelopment();
+        options.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
+        options.KeepAliveInterval     = TimeSpan.FromSeconds(15);
+        options.MaximumReceiveMessageSize = 64 * 1024; // 64KB cap per message
+    })
+    .AddJsonProtocol(opts =>
+    {
+        opts.PayloadSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
+
+
+builder.Services.AddSingleton<ILogFileService, LogFileService>();
+builder.Services.AddSingleton<LogWatcherService>();
 builder.Services.AddControllers();
-builder.Services.AddSignalR();
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -33,7 +47,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AngularPolicy");
-app.MapHub<LogHub>("/hubs/logs");
+app.MapHub<LogStreamHub>("/hubs/logs");
 app.UseAuthorization();
 
 app.MapControllers();
